@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Mail, Phone, MapPin, Linkedin, FileText, Send, CheckCircle, X, Printer, Copy, Terminal } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, FileText, Send, CheckCircle, X, Printer, Copy, Terminal, Github } from 'lucide-react';
 
 interface ContactSectionProps {
   showResume: boolean;
@@ -142,13 +142,23 @@ export default function ContactSection({ showResume, setShowResume }: ContactSec
           {/* Social and File Actions */}
           <div className="flex flex-wrap gap-4 pt-4">
             <a
-              href="https://linkedin.com/in/angelrosecd"
+              href="https://www.linkedin.com/in/angelrosecd/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-3 bg-[#0077B5]/10 border border-[#0077B5]/30 hover:bg-[#0077B5]/20 text-[#00D4FF] text-xs font-mono rounded-lg flex items-center space-x-2 transition-all duration-300"
             >
               <Linkedin className="w-4 h-4" />
               <span>LINKEDIN PROFILE</span>
+            </a>
+
+            <a
+              href="https://github.com/angelrosecd554"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-3 bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/25 text-white text-xs font-mono rounded-lg flex items-center space-x-2 transition-all duration-300"
+            >
+              <Github className="w-4 h-4 text-white" />
+              <span>GITHUB PROFILE</span>
             </a>
 
             <button
@@ -334,7 +344,8 @@ export default function ContactSection({ showResume, setShowResume }: ContactSec
                     <p>Thrissur, Kerala, India</p>
                     <p>angelrosecd005@gmail.com</p>
                     <p>+91 8891251155</p>
-                    <p>linkedin.com/in/angelrosecd</p>
+                    <p>www.linkedin.com/in/angelrosecd/</p>
+                    <p>github.com/angelrosecd554</p>
                   </div>
                 </div>
 

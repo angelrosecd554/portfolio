@@ -146,10 +146,11 @@ export default function SkillsMap() {
                     }}
                   >
                     <motion.div
-                      whileHover={{ scale: 1.15 }}
+                      animate={isHovered ? { scale: [1.15, 1.25, 1.15] } : { scale: 1 }}
+                      transition={isHovered ? { duration: 2.5, repeat: Infinity, ease: "easeInOut" } : { duration: 0.3 }}
                       onMouseEnter={() => setHoveredSkill(skill)}
                       onClick={() => setHoveredSkill(skill)}
-                      className={`relative w-12 h-12 md:w-16 md:h-16 rounded-full flex flex-col items-center justify-center backdrop-blur-md cursor-pointer border transition-all duration-300 ${
+                      className={`relative w-20 h-20 md:w-28 md:h-28 rounded-full flex flex-col items-center justify-center backdrop-blur-md cursor-pointer border transition-colors duration-300 ${
                         isHovered
                           ? 'bg-gradient-to-br from-indigo-900 to-[#040404] border-cyan-400 text-white shadow-md shadow-cyan-400/30'
                           : 'bg-[#0A0E1A]/70 border-white/10 text-gray-300 hover:border-purple-300'
@@ -169,8 +170,8 @@ export default function SkillsMap() {
                       </svg>
 
                       {/* Display name initial or micro text */}
-                      <span className="text-[9px] md:text-xxs font-mono uppercase tracking-wider text-center font-bold font-mono p-1">
-                        {skill.name.substring(0, 7)}
+                      <span className="text-[8px] md:text-[9px] font-mono uppercase tracking-wider text-center font-bold p-1 leading-tight break-words max-w-full">
+                        {skill.name}
                       </span>
 
                       {/* Level progress arc on node outer rim */}

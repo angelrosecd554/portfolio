@@ -1,11 +1,11 @@
 export interface Project {
   id: string;
   title: string;
+  date: string;
   description: string;
-  challenge: string;
-  solution: string;
-  impact: string;
-  keyLearnings: string;
+  challenge?: string;
+  solution?: string;
+  metrics?: string[];
   technologies: string[];
   visualType: 'travel' | 'medical' | 'efficiency';
 }

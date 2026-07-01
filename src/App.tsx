@@ -15,6 +15,8 @@ import {
   LineChart,
   Brain,
   HelpCircle,
+  Menu,
+  X,
 } from 'lucide-react';
 
 import CosmosCanvas from './components/CosmosCanvas';
@@ -42,6 +44,7 @@ export default function App() {
     return true;
   });
   const [windowHeight, setWindowHeight] = useState(800);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Synchronize scroll depth and window height
   useEffect(() => {
@@ -110,8 +113,8 @@ export default function App() {
                 </div>
               </a>
 
-              {/* Minimalist links */}
-              <nav className="flex items-center space-x-6 md:space-x-8 font-mono text-xs text-gray-300">
+              {/* Minimalist links (Desktop) */}
+              <nav className="hidden md:flex items-center space-x-8 font-mono text-xs text-gray-300">
                 <a href="#" className="hover:text-cyan-400 transition-colors uppercase">Home</a>
                 <a href="#about" className="hover:text-cyan-400 transition-colors">ABOUT</a>
                 <a href="#projects" className="hover:text-purple-400 transition-colors">PROJECTS</a>
@@ -129,8 +132,69 @@ export default function App() {
                   CONTACT
                 </a>
               </nav>
+
+              {/* Mobile Menu Toggle */}
+              <div className="md:hidden flex items-center">
+                <button
+                  onClick={() => setIsMobileMenuOpen(true)}
+                  className="text-gray-300 hover:text-cyan-400 transition-colors p-2"
+                  aria-label="Open Mobile Menu"
+                >
+                  <Menu className="w-6 h-6" />
+                </button>
+              </div>
             </div>
           </header>
+
+          {/* Mobile Drawer Overlay */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="fixed inset-0 bg-[#040404]/80 backdrop-blur-sm z-[60] md:hidden"
+                />
+                <motion.div
+                  initial={{ x: '100%' }}
+                  animate={{ x: 0 }}
+                  exit={{ x: '100%' }}
+                  transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                  className="fixed top-0 right-0 h-full w-[280px] bg-gradient-to-b from-[#0A0E1A] to-[#040404] border-l border-white/5 shadow-2xl z-[70] md:hidden flex flex-col"
+                >
+                  <div className="p-6 flex justify-end">
+                    <button
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-gray-300 hover:text-purple-400 transition-colors p-2 rounded-full hover:bg-white/5"
+                      aria-label="Close Mobile Menu"
+                    >
+                      <X className="w-6 h-6" />
+                    </button>
+                  </div>
+                  <nav className="flex flex-col space-y-8 px-8 py-4 flex-1 font-mono text-sm text-gray-300">
+                    <a href="#" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-cyan-400 transition-colors tracking-widest uppercase">Home</a>
+                    <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-cyan-400 transition-colors tracking-widest uppercase">About</a>
+                    <a href="#projects" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-purple-400 transition-colors tracking-widest uppercase">Projects</a>
+                    <a href="#skills" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-cyan-400 transition-colors tracking-widest uppercase">Skills</a>
+                    <a
+                      href="#contact"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsMobileMenuOpen(false);
+                        const el = document.getElementById('contact');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="hover:text-purple-400 transition-colors tracking-widest uppercase"
+                    >
+                      Contact
+                    </a>
+                  </nav>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
 
           {/* 5. Main Hero Screen Layer */}
           <main className="relative z-20">
@@ -159,13 +223,13 @@ export default function App() {
                   </div>
 
                   <p id="hero-statement" className="text-gray-300 text-sm md:text-base leading-relaxed max-w-xl font-sans">
-                    Building intelligent systems that solve real-world problems through Artificial Intelligence, machine learning, and innovative thinking. Specialist in neural architecture optimizations.
+                    Building intelligent systems that solve real-world problems through Artificial Intelligence, machine learning, and innovative thinking.
                   </p>
 
 
 
                   {/* Action Link Buttons */}
-                  <div className="flex flex-wrap gap-4 pt-4">
+                  {/*<div className="flex flex-wrap gap-4 pt-4">
                     <button
                       onClick={() => {
                         const el = document.getElementById('projects');
@@ -192,7 +256,7 @@ export default function App() {
                     >
                       Contact Me
                     </button>
-                  </div>
+                  </div>*/}
                 </div>
 
                 {/* Right Side: Subtle Pointer Indicator and Depth Frame */}
@@ -241,7 +305,7 @@ export default function App() {
             {/* Micro footer detail elements */}
             <footer className="py-8 bg-[#040404] border-t border-white/[0.03] text-center font-mono text-xxs text-gray-650 relative z-30">
               <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p>© 2026 ANGEL ROSE C D • AI & Data Science. Secure Recruiter Portal.</p>
+                <p>@2026 ANGEL ROSE CD. ALL RIGHTS RESERVED.</p>
                 <p className="text-[9px] text-gray-600">CONSTRUCTED WITH PRECISION</p>
               </div>
             </footer>
