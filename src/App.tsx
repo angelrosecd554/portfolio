@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useScroll, useSpring } from 'motion/react';
 import {
   Sparkles,
   MapPin,
@@ -31,6 +31,13 @@ import ContactSection from './components/ContactSection';
 import DiscoverySystem from './components/DiscoverySystem';
 
 export default function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   const [loading, setLoading] = useState(true);
   const [scrollY, setScrollY] = useState(0);
   const [showResume, setShowResume] = useState(false);
@@ -70,6 +77,11 @@ export default function App() {
 
   return (
     <div className={`relative bg-[#040404] min-h-screen text-white select-none overflow-x-hidden font-sans ${immersiveCursor ? 'immersive-cursor-active' : ''}`}>
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 origin-left z-[100]"
+        style={{ scaleX }}
+      />
       
       {/* 1. Cinematic Loading Screen Sequence */}
       <AnimatePresence>
