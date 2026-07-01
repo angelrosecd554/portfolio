@@ -225,7 +225,7 @@ export default function App() {
                       <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-cyan-400 font-bold">PORTFOLIO 2026</span>
                     </div>
 
-                    <h1 id="hero-title" className="text-5xl md:text-7xl font-mono tracking-tight font-bold text-white leading-[1.08]">
+                    <h1 id="hero-title" className="text-5xl md:text-7xl font-mono tracking-tight font-bold text-[#ff0070] leading-[1.08]">
                       ANGEL ROSE C D
                     </h1>
 
