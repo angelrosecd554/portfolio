@@ -76,14 +76,7 @@ export default function AboutSection() {
                 </div>
               </div>
               <h4 className="text-[10px] font-mono uppercase tracking-wider text-gray-400 mb-2">Current Focus</h4>
-              <p className="text-xl font-mono text-white font-bold tracking-tight mb-2">Data Science & Predictive ML</p>
-              <p className="text-xs text-gray-400 font-sans mb-4 leading-relaxed">Training models to uncover patterns and automate decisions.</p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 text-[11px] font-mono rounded-full bg-white/5 border border-white/5 text-gray-300">Machine Learning</span>
-                <span className="px-3 py-1 text-[11px] font-mono rounded-full bg-white/5 border border-white/5 text-gray-300">Exploratory Data Analysis</span>
-                <span className="px-3 py-1 text-[11px] font-mono rounded-full bg-white/5 border border-white/5 text-gray-300">Scikit-Learn</span>
-                <span className="px-3 py-1 text-[11px] font-mono rounded-full bg-white/5 border border-white/5 text-gray-300">Data Cleaning</span>
-              </div>
+              <p className="text-xl font-mono text-white font-bold tracking-tight">Data Science & Predictive ML</p>
             </div>
             
             {/* Origin Card */}
@@ -99,27 +92,34 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Domains Card */}
+          {/* Domains & Values Card */}
           <div className="p-6 bg-gradient-to-br from-[#0A0E1A]/60 to-[#040404]/80 border border-white/5 rounded-2xl hover:border-cyan-400/30 transition-colors backdrop-blur-md relative overflow-hidden group">
              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-cyan-500/5 group-hover:text-cyan-500/10 transition-colors duration-500">
                <Target className="w-24 h-24" />
              </div>
-             <h4 className="text-[10px] font-mono uppercase tracking-wider text-gray-400 mb-4 relative z-10">Executing Domain</h4>
-             <div className="flex flex-wrap gap-2 relative z-10">
-               <span className="px-3 py-1.5 text-xs font-mono rounded-lg border border-white/5 bg-white/5 text-gray-300 hover:border-cyan-400/30 transition-colors">Analytical</span>
-               <span className="px-3 py-1.5 text-xs font-mono rounded-lg border border-white/5 bg-white/5 text-gray-300 hover:border-cyan-400/30 transition-colors">Innovator</span>
-               <span className="px-3 py-1.5 text-xs font-mono rounded-lg border border-white/5 bg-white/5 text-gray-300 hover:border-cyan-400/30 transition-colors">Empathy</span>
-               <span className="px-3 py-1.5 text-xs font-mono rounded-lg border border-white/5 bg-white/5 text-gray-300 hover:border-cyan-400/30 transition-colors">Problem Solver</span>
-               <span className="px-3 py-1.5 text-xs font-mono rounded-lg border border-white/5 bg-white/5 text-gray-300 hover:border-cyan-400/30 transition-colors">Futuristic</span>
+             
+             {/* Executing Domain */}
+             <div className="relative z-10 mb-6">
+               <h4 className="text-[10px] font-mono uppercase tracking-wider text-gray-400 mb-4">Executing Domain</h4>
+               <div className="flex flex-wrap gap-2">
+                 <span className="px-3 py-1.5 text-xs font-mono rounded-lg border border-white/5 bg-white/5 text-gray-300 hover:border-cyan-400/30 transition-colors">Analytical</span>
+                 <span className="px-3 py-1.5 text-xs font-mono rounded-lg border border-white/5 bg-white/5 text-gray-300 hover:border-cyan-400/30 transition-colors">Innovator</span>
+                 <span className="px-3 py-1.5 text-xs font-mono rounded-lg border border-white/5 bg-white/5 text-gray-300 hover:border-cyan-400/30 transition-colors">Empathy</span>
+                 <span className="px-3 py-1.5 text-xs font-mono rounded-lg border border-white/5 bg-white/5 text-gray-300 hover:border-cyan-400/30 transition-colors">Problem Solver</span>
+                 <span className="px-3 py-1.5 text-xs font-mono rounded-lg border border-white/5 bg-white/5 text-gray-300 hover:border-cyan-400/30 transition-colors">Futuristic</span>
+               </div>
              </div>
-          </div>
 
-          {/* Values Card */}
-          <div className="p-6 bg-gradient-to-br from-[#0A0E1A]/60 to-[#040404]/80 border border-white/5 rounded-2xl hover:border-cyan-400/30 transition-colors backdrop-blur-md">
-             <h4 className="text-[10px] font-mono uppercase tracking-wider text-[#9d9d9d] mb-3">My Values</h4>
-             <p className="text-sm font-sans text-gray-300 font-medium tracking-wide leading-relaxed">
-                Intelligence • Impact • Accessibility • Productivity • Exploration
-             </p>
+             {/* Divider */}
+             <div className="h-px w-full bg-white/5 relative z-10 mb-6" />
+
+             {/* Values */}
+             <div className="relative z-10">
+               <h4 className="text-[10px] font-mono uppercase tracking-wider text-gray-400 mb-3">My Values</h4>
+               <p className="text-sm font-sans text-gray-200 font-medium tracking-wide leading-relaxed">
+                  Intelligence • Impact • Accessibility • Productivity • Exploration
+               </p>
+             </div>
           </div>
         </div>
       </div>

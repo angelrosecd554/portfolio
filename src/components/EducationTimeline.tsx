@@ -7,26 +7,26 @@ export default function EducationTimeline() {
     {
       id: 1,
       year: '2022 - 2026',
-      badge: 'BTECH',
-      score: 'CGPA : 7.35',
+      badge: 'GRADUATION',
+      score: 'CGPA: 7.37',
       title: 'Artificial Intelligence and Data Science',
-      institution: 'VIMAL JYOTHI ENGINEERING COLLEGE, KANNUR'
+      institution: 'Vimal Jyothi Engineering College (A.P.J. Abdul Kalam University)'
     },
     {
       id: 2,
       year: '2020 - 2022',
       badge: 'HIGHER SECONDARY',
-      score: 'Score : 87.83%',
-      title: 'Higher Secondary School',
-      institution: 'GOVT.R.S.R.V.H.S.SCHOOL, VELUR, THRISSUR'
+      score: 'Score: 87.83%',
+      title: 'Higher Secondary Education (HSE)',
+      institution: 'Govt. R.S.R.V.H.S. School (DHSE)'
     },
     {
       id: 3,
       year: '2019 - 2020',
       badge: 'HIGH SCHOOL',
-      score: 'Score : 100%',
-      title: 'High School',
-      institution: 'ASSISI ENGLISH MEDIUM HIGHER SECONDARY SCHOOL, THRISSUR'
+      score: 'Score: 100%',
+      title: 'Secondary School Leaving Certificate (SSLC)',
+      institution: 'Assisi English Medium Higher Secondary School (KBPE)'
     }
   ];
 
